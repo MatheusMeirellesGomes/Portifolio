@@ -5,7 +5,7 @@
 import { motion } from 'framer-motion'; // Biblioteca de animações
 import Scene3D from './Scene3D'; // Componente da esfera 3D animada
 import { Button } from '@/components/ui/button'; // Componente de botão estilizado
-import { ArrowDown } from 'lucide-react'; // Ícone de seta para baixo
+import { ArrowDown, Download } from 'lucide-react'; // Ícones
 
 const Hero = () => {
   return (
@@ -48,7 +48,7 @@ const Hero = () => {
             Unindo desenvolvimento fullstack e infraestrutura de TI para criar soluções reais
           </p>
           {/* Botões de ação */}
-          <div className="flex gap-4 justify-center">
+          <div className="flex flex-wrap gap-4 justify-center">
             {/* Botão "Ver Projetos" - rola até a seção de projetos */}
             <Button
               size="lg"
@@ -65,6 +65,18 @@ const Hero = () => {
               onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
             >
               Contato
+            </Button>
+            {/* Botão de download do currículo em PDF */}
+            <Button
+              size="lg"
+              variant="outline"
+              className="border-primary text-foreground hover:bg-primary/10"
+              asChild
+            >
+              <a href={`${import.meta.env.BASE_URL}curriculo-matheus-gomes.pdf`} download>
+                <Download className="w-4 h-4 mr-2" />
+                Baixar Currículo
+              </a>
             </Button>
           </div>
         </motion.div>

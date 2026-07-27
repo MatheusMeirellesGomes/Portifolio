@@ -5,7 +5,7 @@ import { motion } from 'framer-motion'; // Biblioteca de animações
 import { Button } from '@/components/ui/button'; // Botão estilizado
 import { Input } from '@/components/ui/input'; // Campo de texto estilizado
 import { Textarea } from '@/components/ui/textarea'; // Área de texto estilizada
-import { Mail, Github, Linkedin, MessageCircle, Instagram } from 'lucide-react'; // Ícones de contato
+import { Mail, Github, Linkedin, MessageCircle, Instagram, Download } from 'lucide-react'; // Ícones de contato
 import { useState } from 'react'; // Hook para gerenciar estado
 
 const CONTACT_EMAIL = 'matheusrmme2019@gmail.com';
@@ -162,6 +162,18 @@ const Contact = () => {
                 <li>• Desenvolvimento fullstack</li>
               </ul>
             </div>
+
+            {/* Botão de download do currículo em PDF */}
+            <Button
+              variant="outline"
+              className="mt-4 w-full border-primary/50 hover:bg-primary/10"
+              asChild
+            >
+              <a href={`${import.meta.env.BASE_URL}curriculo-matheus-gomes.pdf`} download>
+                <Download className="w-4 h-4 mr-2" />
+                Baixar Currículo em PDF
+              </a>
+            </Button>
           </motion.div>
         </div>
       </div>
