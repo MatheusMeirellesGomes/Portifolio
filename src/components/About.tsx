@@ -3,6 +3,7 @@
 
 import { motion } from 'framer-motion'; // Biblioteca de animações
 import { Code2, Cpu, Server } from 'lucide-react'; // Ícones das áreas de atuação
+import matheusPhoto from '@/assets/matheus-photo.jpg'; // Foto de perfil importada como módulo
 
 const About = () => {
   // Array com as 3 áreas de atuação - cada uma com ícone, título e descrição
@@ -53,8 +54,12 @@ const About = () => {
                 {/* Borda gradiente da foto */}
                 <div className="absolute inset-2 rounded-full bg-gradient-to-r from-primary to-secondary p-1">
                   {/* Container da imagem com recorte circular */}
-                  <div className="w-full h-full rounded-full overflow-hidden bg-background flex items-center justify-center">
-                    <span className="text-6xl md:text-7xl font-bold text-glow">MG</span>
+                  <div className="w-full h-full rounded-full overflow-hidden bg-background">
+                    <img
+                      src={matheusPhoto}
+                      alt="Matheus Gomes - Desenvolvedor Full Stack"
+                      className="w-full h-full object-cover"
+                    />
                   </div>
                 </div>
               </div>
